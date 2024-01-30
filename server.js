@@ -20,7 +20,7 @@ app.get('*', function(req,res){
 
 //port
 
-const PORT = 8000 || 5000
+const PORT = process.env.PORT || 5000
 
 //listen
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
