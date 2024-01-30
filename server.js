@@ -8,12 +8,13 @@ dotenv.config();
 //middleware
 app.use(cors());
 app.use(express.json());
+// static files
 
 app.use(express.static(path.join(__dirname, './frontend/dist')));
 //routes 
 app.use("/api/v1/portfolio", require("./routes/portfolioRoute"));
 
-app.get('*', (req, res) => {
+app.get('*', function(req,res){
     res.sendFile(path.join(__dirname, './frontend/dist/index.html'))
 })
 
